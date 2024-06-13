@@ -7,6 +7,7 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <hr>
     <p><% if(messages) { %> 
       <% for (let i = 0; i < messages.length; i++) { %>
         <p>
@@ -15,5 +16,6 @@
         </p>
       <% } %>
       <% }%></p>
+    <form action="/new"><button formmethod="get">Submit a new post</button></form>
   </body>
 </html>

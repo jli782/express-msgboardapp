@@ -15,4 +15,18 @@ router.get("/", function (req, res, next) {
 router.get("/new", (req, res, next) => {
   res.render("form", { title: "Add a new message" });
 });
+
+/* post to form */
+router.post("/new", (req, res, next) => {
+  // console.log(req.body);
+  if (req.body.user != "" && req.body.text != "") {
+    messages.push({
+      text: req.body.userMessage,
+      user: req.body.user,
+      added: new Date(),
+    });
+  }
+  res.redirect("/");
+});
+
 module.exports = router;

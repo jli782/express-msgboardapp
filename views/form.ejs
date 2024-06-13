@@ -11,6 +11,25 @@
       <input name="user"></input>
       <label>Add your message here: </label>
       <input name="userMessage"></input>
+      <button>Submit</button>
     </form>
+    <script>
+      let btn = document.querySelector('button');
+      let inputs = document.querySelectorAll('input');
+      btn.addEventListener('click', (e)=>{
+        let empty = false, blankInput = "";
+        for (let input of inputs){
+          if (input.value == ""){
+            empty = true;
+            blankInput = `${input.name} must not be blank.`;
+            break;
+          }
+        }
+        if (empty){
+          e.preventDefault();
+          alert(blankInput);
+        }
+      })
+    </script>
   </body>
 </html>
