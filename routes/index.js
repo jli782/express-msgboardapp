@@ -16,7 +16,7 @@ router.get("/new", (req, res, next) => {
   res.render("form", { title: "Add a new message" });
 });
 
-/* post to form */
+/* post form to message board */
 router.post("/new", (req, res, next) => {
   // console.log(req.body);
   if (req.body.user != "" && req.body.text != "") {
